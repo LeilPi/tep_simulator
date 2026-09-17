@@ -57,4 +57,4 @@ python -c "import matlab.engine; print(matlab.engine.start_matlab())"
 - `src/` – исходный код.
 - `experiments/` – ноутбуки для анализа.
 - `data/` – результаты.
-- `tests/` – тесты.
+- `docs/' – пояснения.
