@@ -58,3 +58,4 @@ python -c "import matlab.engine; print(matlab.engine.start_matlab())"
 - `experiments/` – ноутбуки для анализа.
 - `data/` – результаты.
 - `docs/' – пояснения.
+- `figures/' – связанные графики.
