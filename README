@@ -59,3 +59,28 @@ python -c "import matlab.engine; print(matlab.engine.start_matlab())"
 - `data/` – результаты.
 - `docs/' – пояснения.
 - `figures/' – связанные графики.
+
+├── src/                         ← весь код
+│   ├── main_function_1.py       ← экономическая функция (затраты + прибыль)
+│   ├── run_cube_4.py            ← запуск экспериментов TEP
+│   ├── build_model_profit.py    ← обучение суррогатной модели
+│   ├── validate_profit_optimum.py ← проверка оптимума на симуляторе
+│   └── creating_cube.py         ← генерация гиперкуба
+│
+├── data/
+│   └── doe_final/
+│       ├── results.csv              ← исходные стоимости
+│       ├── results_accurate.csv     ← пересчитанные стоимости
+│       ├── results_profit.csv       ← прибыль по экспериментам
+│       ├── model_profit.pkl         ← обученная модель
+│       └── exp_001/                 ← пример данных одного эксперимента
+│           ├── steady_xmeas.csv
+│           └── steady_xmv.csv
+│
+├── figures/                     ← графики для отчёта
+│   ├── model_accurate.png
+│   ├── model_predictions.png
+│   └── cost_surface.png
+│
+└── docs/
+    └── пояснительная_записка.md ←
