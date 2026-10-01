@@ -60,27 +60,65 @@ python -c "import matlab.engine; print(matlab.engine.start_matlab())"
 - `docs/' – пояснения.
 - `figures/' – связанные графики.
 
-├── src/                         ← весь код
-│   ├── main_function_1.py       ← экономическая функция (затраты + прибыль)
-│   ├── run_cube_4.py            ← запуск экспериментов TEP
-│   ├── build_model_profit.py    ← обучение суррогатной модели
-│   ├── validate_profit_optimum.py ← проверка оптимума на симуляторе
-│   └── creating_cube.py         ← генерация гиперкуба
+
+tep-rto-project/
 │
-├── data/
-│   └── doe_final/
-│       ├── results.csv              ← исходные стоимости
-│       ├── results_accurate.csv     ← пересчитанные стоимости
-│       ├── results_profit.csv       ← прибыль по экспериментам
-│       ├── model_profit.pkl         ← обученная модель
-│       └── exp_001/                 ← пример данных одного эксперимента
-│           ├── steady_xmeas.csv
-│           └── steady_xmv.csv
+├── README.md                        ← описание проекта
+├── requirements.txt                 ← зависимости
+├── .gitignore                       ← что не загружать
 │
-├── figures/                     ← графики для отчёта
+├── src/                             ← весь код
+│   ├── __init__.py
+│   │
+│   │   ═══ ОСНОВНЫЕ МОДУЛИ ═══
+│   ├── main_function_1.py           ← экономика (прибыль, точная)
+│   ├── simulator_config.py          ← конфигурация
+│   ├── save_data.py                 ← сохранение данных
+│   │
+│   │   ═══ DOE (3 ПЕРЕМЕННЫЕ) ═══
+│   ├── creating_cube.py             ← генерация гиперкуба (3 переменные)
+│   ├── run_cube_4.py                ← запуск DOE (3 переменные)
+│   │
+│   │   ═══ DOE (6 ПЕРЕМЕННЫХ) ═══
+│   ├── generate_hypercube_extended.py ← гиперкуб (6 переменных + якоря)
+│   ├── run_cube_5.py                ← запуск DOE (6 переменных)
+│   │
+│   │   ═══ МОДЕЛИ ═══
+│   ├── main_model_2.py              ← модель прибыли (3 переменные)
+│   ├── build_model_extended.py      ← модель прибыли (6 переменных)
+│   │
+│   │
+│   │   ═══ НОМИНАЛ ═══
+│   ├── run_nominal_mode.py          ← номинал (3 переменные)
+│   ├── run_nominal_extended.py      ← номинал (6 переменных)
+│   │
+│
+├── data/                            ← данные
+│   ├── doe_final/                   ← 3-переменная модель
+│   │   ├── results.csv
+│   │   ├── results_accurate.csv
+│   │   ├── results_profit.csv
+│   │   ├── model_profit.pkl
+│   │   ├── surrogate_model.pkl
+│   │   ├── nominal_mode.csv
+│   │   └── exp_001/
+│   │       ├── steady_xmeas.csv
+│   │       ├── steady_xmv.csv
+│   │       ├── xmeas_history.csv
+│   │       └── xmv_history.csv
+│   │
+│   └── doe_extended/                ← 6-переменная модель
+│       ├── design/
+│       │   └── hypercube_extended_v2.csv
+│       ├── runs/
+│       │   ├── results_extended.csv
+│       │   ├── steady_data_extended.csv
+│       │   └── exp_001/
+│       ├── model_profit_extended.pkl
+│       ├── nominal_mode.csv
+│       └── validation_result.csv
+│
+├── figures/                         ← графики
+│   ├── extended_model.png
 │   ├── model_accurate.png
-│   ├── model_predictions.png
 │   └── cost_surface.png
-│
-└── docs/
-    └── пояснительная_записка.md ←
