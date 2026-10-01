@@ -1,0 +1,2 @@
+mode,ReactorTempSP,ReactorPressSP,ProductionSP,ReactorLevelSP,AgitatorSpeedSP,SteamValvePosSP,revenue,purge_loss,product_loss,compressor_cost,steam_cost,total_cost,profit,is_steady
+nominal,122.9,2800.0,22.89,75.0,200.0,47.446,7364.973742286056,81.1660420646918,30.90321340734259,14.791187182471132,5.85464993453089,132.7150925890364,7232.25864969702,True

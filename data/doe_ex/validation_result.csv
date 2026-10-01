@@ -1,0 +1,2 @@
+ReactorTempSP,ReactorPressSP,ProductionSP,ReactorLevelSP,AgitatorSpeedSP,SteamValvePosSP,profit_pred,profit_actual,error,error_pct,is_steady
+126.22231901753335,2895.0,24.0,50.0,250.0,14.831939976740047,7722.0150044376405,7585.438967628007,136.57603680963348,1.8005027446993127,True
